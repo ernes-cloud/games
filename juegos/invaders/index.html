@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Space Invaders · Arcade</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="icon" href="../../favicon.svg">
+  <link rel="stylesheet" href="../../shared/style.css">
+</head>
+<body class="game-page">
+  <header class="game-header">
+    <a class="back" href="../../">← Juegos</a>
+    <h1>Invaders</h1>
+    <div class="stats"><span>Puntos <b id="score">0</b></span><span>Récord <b id="best">0</b></span></div>
+    <button class="icon-btn" id="pause" type="button" aria-label="Pausa">⏸</button>
+  </header>
+  <main class="game-main">
+    <div class="stage" style="--w: 480px; --ratio: 0.8">
+      <canvas id="game"></canvas>
+      <div class="overlay" id="overlay" hidden>
+        <h2 class="overlay-title"></h2>
+        <p class="overlay-text"></p>
+        <button class="overlay-btn" type="button"></button>
+      </div>
+    </div>
+    <div class="touch-controls">
+      <button data-hold="left" aria-label="Izquierda">◀</button>
+      <button data-hold="fire" aria-label="Disparar">🔥</button>
+      <button data-hold="right" aria-label="Derecha">▶</button>
+    </div>
+    <p class="help"><span class="keys">Muévete con <kbd>←</kbd><kbd>→</kbd> o <kbd>A</kbd><kbd>D</kbd> y dispara con <kbd>Espacio</kbd>. Pausa con <kbd>P</kbd>.</span></p>
+  </main>
+  <script src="../../shared/common.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>

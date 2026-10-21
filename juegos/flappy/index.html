@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Flappy · Arcade</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="icon" href="../../favicon.svg">
+  <link rel="stylesheet" href="../../shared/style.css">
+</head>
+<body class="game-page">
+  <header class="game-header">
+    <a class="back" href="../../">← Juegos</a>
+    <h1>Flappy</h1>
+    <div class="stats"><span>Puntos <b id="score">0</b></span><span>Récord <b id="best">0</b></span></div>
+    <button class="icon-btn" id="pause" type="button" aria-label="Pausa">⏸</button>
+  </header>
+  <main class="game-main">
+    <div class="stage" style="--w: 400px; --ratio: 0.5625">
+      <canvas id="game"></canvas>
+      <div class="overlay" id="overlay" hidden>
+        <h2 class="overlay-title"></h2>
+        <p class="overlay-text"></p>
+        <button class="overlay-btn" type="button"></button>
+      </div>
+    </div>
+    <p class="help"><span class="keys">Aletea con <kbd>Espacio</kbd>, <kbd>↑</kbd> o clic. Pausa con <kbd>P</kbd>. </span>En móvil, toca la pantalla.</p>
+  </main>
+  <script src="../../shared/common.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>

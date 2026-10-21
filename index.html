@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Arcade · ernestoag</title>
+  <meta name="description" content="Juegos arcade clásicos para jugar gratis en el navegador.">
+  <link rel="icon" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="shared/style.css">
+</head>
+<body>
+  <main class="home">
+    <section class="hero">
+      <h1>ARCADE</h1>
+      <p>Juegos clásicos para jugar directamente en el navegador, en el ordenador o en el móvil. Sin descargas y sin registro.</p>
+    </section>
+
+    <h2 class="section-title">Arcade clásicos</h2>
+    <div class="grid" id="games"></div>
+
+    <section class="soon">
+      <h2 class="section-title">Próximamente</h2>
+      <div class="grid">
+        <div class="soon-item">🧩 2048</div>
+        <div class="soon-item">💣 Buscaminas</div>
+        <div class="soon-item">🔢 Sudoku</div>
+        <div class="soon-item">🔤 Wordle en español</div>
+        <div class="soon-item">❌ 3 en raya con IA</div>
+        <div class="soon-item">🔴 Conecta 4</div>
+      </div>
+    </section>
+
+    <p class="footer">Hecho con HTML, CSS y JavaScript · games.ernestoag.space</p>
+  </main>
+
+  <script src="shared/common.js"></script>
+  <script>
+    const GAMES = [
+      { id: 'snake', name: 'Snake', emoji: '🐍', art: 'linear-gradient(135deg, #064e3b, #16a34a)', desc: 'Come, crece y no te muerdas la cola.' },
+      { id: 'tetris', name: 'Tetris', emoji: '🧱', art: 'linear-gradient(135deg, #1e1b4b, #7c3aed)', desc: 'Encaja las piezas y completa líneas.' },
+      { id: 'breakout', name: 'Breakout', emoji: '🏓', art: 'linear-gradient(135deg, #7c2d12, #f97316)', desc: 'Rompe todos los ladrillos con la bola.' },
+      { id: 'flappy', name: 'Flappy', emoji: '🐤', art: 'linear-gradient(135deg, #0e7490, #67e8f9)', desc: 'Vuela entre los tubos sin chocar.' },
+      { id: 'invaders', name: 'Space Invaders', emoji: '👾', art: 'linear-gradient(135deg, #020617, #4338ca)', desc: 'Defiende la Tierra de la invasión.' },
+    ];
+
+    const grid = document.getElementById('games');
+    for (const g of GAMES) {
+      const a = document.createElement('a');
+      a.className = 'card';
+      a.href = `juegos/${g.id}/`;
+      a.innerHTML = `
+        <div class="card-art" style="--art: ${g.art}" aria-hidden="true">${g.emoji}</div>
+        <div class="card-body">
+          <h3>${g.name}</h3>
+          <p>${g.desc}</p>
+          <span class="card-best">Tu récord: <b>${Arcade.getBest(g.id)}</b></span>
+        </div>`;
+      grid.appendChild(a);
+    }
+  </script>
+</body>
+</html>
