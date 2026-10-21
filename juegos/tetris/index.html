@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Tetris · Arcade</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="icon" href="../../favicon.svg">
+  <link rel="stylesheet" href="../../shared/style.css">
+</head>
+<body class="game-page">
+  <header class="game-header">
+    <a class="back" href="../../">← Juegos</a>
+    <h1>Tetris</h1>
+    <div class="stats"><span>Puntos <b id="score">0</b></span><span>Récord <b id="best">0</b></span></div>
+    <button class="icon-btn" id="pause" type="button" aria-label="Pausa">⏸</button>
+  </header>
+  <main class="game-main">
+    <div class="stage" style="--w: 460px; --ratio: 0.7667">
+      <canvas id="game"></canvas>
+      <div class="overlay" id="overlay" hidden>
+        <h2 class="overlay-title"></h2>
+        <p class="overlay-text"></p>
+        <button class="overlay-btn" type="button"></button>
+      </div>
+    </div>
+    <div class="touch-controls">
+      <button data-act="left" aria-label="Izquierda">◀</button>
+      <button data-act="right" aria-label="Derecha">▶</button>
+      <button data-act="rotate" aria-label="Girar">⟳</button>
+      <button data-act="down" aria-label="Bajar">▼</button>
+      <button data-act="drop" aria-label="Caída rápida">⤓</button>
+    </div>
+    <p class="help"><span class="keys"><kbd>←</kbd><kbd>→</kbd> mover · <kbd>↑</kbd> o <kbd>X</kbd> girar · <kbd>Z</kbd> girar al revés · <kbd>↓</kbd> bajar · <kbd>Espacio</kbd> caída rápida · <kbd>P</kbd> pausa</span></p>
+  </main>
+  <script src="../../shared/common.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
